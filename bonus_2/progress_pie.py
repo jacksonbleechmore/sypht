@@ -32,7 +32,6 @@ def is_black_side_of_radius(percent, x, y):
     return retVal 
 
 
-
 def in_segment(percent, x, y):
     retVal = False
     if percent <=50:
@@ -72,12 +71,12 @@ def read_input_from_file(file_name):
     
 
 def main():
-    input_list = read_input_from_file('/Users/jackson/Sypth/bonus_2/input.txt')
-    for i in input_list:
-        if i[0]!=0 and is_black(i[0],i[1],i[2]):
-            print('Case #{}: black'.format(i))
+    input_list = read_input_from_file(sys.argv[1])
+    for index, input in enumerate(input_list):
+        if input[0]!=0 and is_black(input[0],input[1],input[2]):
+            print('Case #{}: black'.format(index))
         else:
-            print('Case #{}: white'.format(i))
+            print('Case #{}: white'.format(index))
         
 
 main()
